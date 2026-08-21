@@ -22,15 +22,15 @@ public class DetectionResultListener {
 
             // 2. 결과에 따른 후속 로직 처리
             if (isAnomalous) {
-                System.out.println("🚨 [위험] OrderID: " + orderId + " - 이상 결제 징후 발견! 결제 차단 및 추가 인증 필요.");
+                System.out.println("[위험] OrderID: " + orderId + " - 이상 결제 징후 발견 결제 차단 및 추가 인증 필요.");
                 // TODO: 결제 상태를 'CANCELED' 또는 'PENDING_AUTH'로 업데이트하는 DB 로직
             } else {
-                System.out.println("✅ [정상] OrderID: " + orderId + " - 정상 결제 승인 프로세스 진행.");
+                System.out.println("[정상] OrderID: " + orderId + " - 정상 결제 승인 프로세스 진행.");
                 // TODO: 결제 완료 로직 실행
             }
 
         } catch (Exception e) {
-            System.err.println("❌ 결과 메시지 파싱 에러: " + e.getMessage());
+            System.err.println("결과 메시지 파싱 에러: " + e.getMessage());
         }
     }
 }
