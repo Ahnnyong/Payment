@@ -3,7 +3,7 @@ package com.fraud.payment.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
-import com.fasterxml.jackson.databind.ObjectMapper; // JSON 변환을 위해 권장
+import com.fasterxml.jackson.databind.ObjectMapper; 
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,10 +31,10 @@ public class PaymentService {
 
             // 3. Kafka 전송
             kafkaTemplate.send("payment-topic", message);
-            System.out.println("📤 [Kafka] 결제 데이터 전송: " + orderId);
+            System.out.println("[Kafka] 결제 데이터 전송: " + orderId);
 
         } catch (Exception e) {
-            System.err.println("❌ JSON 변환 에러: " + e.getMessage());
+            System.err.println("SON 변환 에러: " + e.getMessage());
         }
     }
 }
