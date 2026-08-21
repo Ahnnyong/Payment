@@ -21,7 +21,7 @@ async def consume_and_predict():
     await consumer.start()
     await producer.start()
     
-    print("🚀 Kafka 컨슈머가 'payment-topic'을 구독하기 시작했습니다...")
+    print("Kafka 컨슈머가 'payment-topic'을 구독하기 시작했습니다...")
     
     try:
         async for msg in consumer:
@@ -49,10 +49,10 @@ async def consume_and_predict():
                 "detection-result-topic", 
                 json.dumps(result).encode('utf-8')
             )
-            print(f"✅ 분석 완료: OrderId {payment_data['orderId']} -> {'이상' if is_anomalous else '정상'}")
+            print(f"분석 완료: OrderId {payment_data['orderId']} -> {'이상' if is_anomalous else '정상'}")
             
     except Exception as e:
-        print(f"❌ 에러 발생: {e}")
+        print(f"에러 발생: {e}")
     finally:
         await consumer.stop()
         await producer.stop()
