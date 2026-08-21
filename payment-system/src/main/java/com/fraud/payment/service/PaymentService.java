@@ -34,7 +34,7 @@ public class PaymentService {
             System.out.println("[Kafka] 결제 데이터 전송: " + orderId);
 
         } catch (Exception e) {
-            System.err.println("SON 변환 에러: " + e.getMessage());
+            System.err.println("JSON 변환 에러: " + e.getMessage());
         }
     }
 }
