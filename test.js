@@ -10,7 +10,6 @@ export const options = {
 };
 
 export default function () {
-  // 실제 컨트롤러에 맞는 경로와 파라미터를 추가했습니다.
   const url = 'http://13.236.1.107/pay?orderId=test_order&userId=1&timeDiff=0.5&locDiff=0&isNight=0&isHighAmount=0';
   
   const res = http.get(url);
